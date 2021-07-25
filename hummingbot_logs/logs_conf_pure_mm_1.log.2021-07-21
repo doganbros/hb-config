@@ -1,0 +1,29 @@
+2021-07-21 11:55:58,586 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-21 11:55:58,864 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-21 11:55:59,249 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for FIRO-BTC. 1/1 completed.
+2021-07-21 11:55:59,251 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-21 11:56:01,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (FIRO-BTC) Creating 1 bid orders at (Size, Price): ['8.5 FIRO, 0.0001335 BTC']
+2021-07-21 11:56:01,232 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BFOBC1626868561001676 for 8.50000000 FIRO-BTC.
+2021-07-21 11:56:01,247 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1626868561.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "FIRO-BTC", "amount": "8.50000000", "price": "0.00013350", "order_id": "x-XEKWYICX-BFOBC1626868561001676", "exchange_order_id": "32222042", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-21 11:56:08,804 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-21 11:56:09,037 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BFOBC1626868561001676.
+2021-07-21 11:56:09,045 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1626868569.0, "order_id": "x-XEKWYICX-BFOBC1626868561001676", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-21 12:05:36,334 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-21 12:05:36,575 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-21 12:05:36,977 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for FIRO-BTC. 1/1 completed.
+2021-07-21 12:05:36,977 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-21 12:05:38,002 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (FIRO-BTC) Creating 1 bid orders at (Size, Price): ['8.5 FIRO, 0.0001333 BTC']
+2021-07-21 12:05:38,874 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BFOBC1626869138002608 for 8.50000000 FIRO-BTC.
+2021-07-21 12:05:38,888 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1626869138.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "FIRO-BTC", "amount": "8.50000000", "price": "0.00013330", "order_id": "x-XEKWYICX-BFOBC1626869138002608", "exchange_order_id": "32222278", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-21 12:05:58,920 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-21 12:05:59,154 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BFOBC1626869138002608.
+2021-07-21 12:05:59,162 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1626869159.0, "order_id": "x-XEKWYICX-BFOBC1626869138002608", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-21 12:14:06,173 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-21 12:14:06,453 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-21 12:14:06,757 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-21 12:14:06,766 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for FIRO-BTC. 1/1 completed.
+2021-07-21 12:14:08,008 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (FIRO-BTC) Creating 1 bid orders at (Size, Price): ['8.5 FIRO, 0.0001329 BTC']
+2021-07-21 12:14:08,504 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BFOBC1626869648009033 for 8.50000000 FIRO-BTC.
+2021-07-21 12:14:08,518 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1626869648.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "FIRO-BTC", "amount": "8.50000000", "price": "0.00013290", "order_id": "x-XEKWYICX-BFOBC1626869648009033", "exchange_order_id": "32222576", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-21 12:14:11,289 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BFOBC1626869648009033.
+2021-07-21 12:14:11,297 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": NaN, "order_id": "x-XEKWYICX-BFOBC1626869648009033", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
