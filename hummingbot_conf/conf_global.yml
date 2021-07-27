@@ -19,7 +19,7 @@ ethereum_token_list_url: https://wispy-bird-88a7.uniswap.workers.dev/?url=http:/
 # Kill switch
 kill_switch_enabled: false
 # The rate of performance at which you would want the bot to stop trading (-20 = 20%)
-kill_switch_rate: -100.0
+kill_switch_rate: -100
 
 # What to auto-fill in the prompt after each import command (start/config)
 autofill_import:
@@ -48,7 +48,7 @@ telegram_chat_id:
 send_error_logs: true
 
 # Advanced configs: Do NOT touch unless you understand what you are changing
-instance_id: b54ac2b030ae97d7593751bd7b7ebd4c3fba3628
+instance_id: 4307817a8a6b3b8f6c336b5512c8a0667ff044e2
 log_level: INFO
 debug_console: false
 strategy_report_interval: 900.0
@@ -94,7 +94,7 @@ balance_asset_limit:
   binance:
 
 # Fixed gas price (in Gwei) for Ethereum transactions
-manual_gas_price: 50.0
+manual_gas_price: 50
 
 # Gateway API Configurations
 # default host to only use localhost

@@ -1,10 +1,114 @@
-2021-07-23 13:50:25,415 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
-2021-07-23 13:50:26,154 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
-2021-07-23 13:50:26,890 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for FIRO-BTC. 1/1 completed.
-2021-07-23 13:50:26,931 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
-2021-07-23 13:50:31,004 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (FIRO-BTC) Creating 1 bid orders at (Size, Price): ['8.5 FIRO, 0.0001305 BTC']
-2021-07-23 13:50:31,698 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BFOBC1627048231004795 for 8.50000000 FIRO-BTC.
-2021-07-23 13:50:31,712 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627048231.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "FIRO-BTC", "amount": "8.50000000", "price": "0.00013050", "order_id": "x-XEKWYICX-BFOBC1627048231004795", "exchange_order_id": "32316170", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
-2021-07-23 13:50:40,179 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
-2021-07-23 13:50:40,413 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BFOBC1627048231004795.
-2021-07-23 13:50:40,421 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627048240.0, "order_id": "x-XEKWYICX-BFOBC1627048231004795", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-27 17:33:40,298 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-27 17:33:40,549 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-27 17:33:40,826 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for FIRO-BTC. 1/1 completed.
+2021-07-27 17:33:40,829 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-27 17:33:42,004 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (FIRO-BTC) Creating 3 bid orders at (Size, Price): ['17.6 FIRO, 0.0001279 BTC', '17.6 FIRO, 0.0001277 BTC', '17.6 FIRO, 0.0001275 BTC']
+2021-07-27 17:33:42,689 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 17.60000000 FIRO-BTC 0.00012790.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-27 17:33:42,697 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-27 17:33:43,190 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 17.60000000 FIRO-BTC 0.00012770.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-27 17:33:43,193 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-27 17:33:43,691 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 17.60000000 FIRO-BTC 0.00012750.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-27 17:33:43,694 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-27 17:34:01,549 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-27 17:35:07,318 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-27 17:35:08,016 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-27 17:35:08,290 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for FIRO-BTC. 1/1 completed.
+2021-07-27 17:35:08,294 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-27 17:35:11,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (FIRO-BTC) Creating 3 bid orders at (Size, Price): ['17.6 FIRO, 0.0001279 BTC', '17.6 FIRO, 0.0001277 BTC', '17.6 FIRO, 0.0001275 BTC']
+2021-07-27 17:35:11,871 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BFOBC1627407311003532 for 17.60000000 FIRO-BTC.
+2021-07-27 17:35:11,891 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627407311.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "FIRO-BTC", "amount": "17.60000000", "price": "0.00012790", "order_id": "x-XEKWYICX-BFOBC1627407311003532", "exchange_order_id": "32505431", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-27 17:35:12,372 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BFOBC1627407311003610 for 17.60000000 FIRO-BTC.
+2021-07-27 17:35:12,386 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627407312.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "FIRO-BTC", "amount": "17.60000000", "price": "0.00012770", "order_id": "x-XEKWYICX-BFOBC1627407311003610", "exchange_order_id": "32505429", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-27 17:35:12,872 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BFOBC1627407311003636 for 17.60000000 FIRO-BTC.
+2021-07-27 17:35:12,885 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627407312.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "FIRO-BTC", "amount": "17.60000000", "price": "0.00012750", "order_id": "x-XEKWYICX-BFOBC1627407311003636", "exchange_order_id": "32505430", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-27 17:35:18,420 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-27 17:35:18,750 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BFOBC1627407311003532.
+2021-07-27 17:35:18,763 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627407318.0, "order_id": "x-XEKWYICX-BFOBC1627407311003532", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-27 17:35:19,251 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BFOBC1627407311003610.
+2021-07-27 17:35:19,263 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627407319.0, "order_id": "x-XEKWYICX-BFOBC1627407311003610", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-27 17:35:19,752 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BFOBC1627407311003636.
+2021-07-27 17:35:19,766 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627407319.0, "order_id": "x-XEKWYICX-BFOBC1627407311003636", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
