@@ -9,19 +9,19 @@ strategy: pure_market_making
 exchange: binance
 
 # Token trading pair for the exchange, e.g. BTC-USDT
-market: FIRO-BTC
+market: XEM-BTC
 
 # How far away from mid price to place the bid order.
 # Spread of 1 = 1% away from mid price at that time.
 # Example if mid price is 100 and bid_spread is 1.
 # Your bid is placed at 99.
-bid_spread: 1.2
+bid_spread: 0.7
 
 # How far away from mid price to place the ask order.
 # Spread of 1 = 1% away from mid price at that time.
 # Example if mid price is 100 and ask_spread is 1.
 # Your bid is placed at 101.
-ask_spread: 1.2
+ask_spread: 0.8
 
 # Minimum Spread
 # How far away from the mid price to cancel active orders
@@ -39,7 +39,7 @@ max_order_age: 1800.0
 order_refresh_tolerance_pct: 0.0
 
 # Size of your bid and ask order.
-order_amount: 8.8
+order_amount: 290.0
 
 # Price band ceiling.
 price_ceiling: -1.0
@@ -67,10 +67,10 @@ inventory_price: 1.0
 order_levels: 3
 
 # Increase or decrease size of consecutive orders after the first order (if order_levels > 1).
-order_level_amount: 0.0
+order_level_amount: 0
 
 # Order price space between orders (if order_levels > 1).
-order_level_spread: 0.15
+order_level_spread: 0.05
 
 # How long to wait before placing the next order in case your order gets filled.
 filled_order_delay: 30.0
@@ -86,10 +86,10 @@ hanging_orders_cancel_pct: 3.0
 order_optimization_enabled: false
 
 # The depth in base asset amount to be used for finding top ask (for order optimization mode).
-ask_order_optimization_depth: 0.0
+ask_order_optimization_depth: 0
 
 # The depth in base asset amount to be used for finding top bid (for order optimization mode).
-bid_order_optimization_depth: 0.0
+bid_order_optimization_depth: 0
 
 # Whether to enable adding transaction costs to order price calculation (true/false).
 add_transaction_costs: true
