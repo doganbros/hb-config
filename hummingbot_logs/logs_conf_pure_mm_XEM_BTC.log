@@ -1192,3 +1192,395 @@ IndexError: list index out of range
 2021-07-29 16:09:15,455 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574955.0, "order_id": "x-XEKWYICX-BXMBC1627574946002229", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
 2021-07-29 16:09:15,957 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574946002254.
 2021-07-29 16:09:15,957 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574955.0, "order_id": "x-XEKWYICX-BXMBC1627574946002254", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:09:42,836 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 20:09:43,167 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 20:09:43,438 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 20:09:43,460 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 20:09:53,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['579 XEM, 0.00000411 BTC', '579 XEM, 0.0000041 BTC', '409 XEM, 0.0000041 BTC']
+2021-07-29 20:09:53,242 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627589393002000 for 579.00000000 XEM-BTC.
+2021-07-29 20:09:53,253 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627589393.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000411", "order_id": "x-XEKWYICX-BXMBC1627589393002000", "exchange_order_id": "168963734", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:09:53,743 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 579.00000000 XEM-BTC 0.00000410.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 20:09:53,750 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 20:09:54,245 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627589393002099 for 409.00000000 XEM-BTC.
+2021-07-29 20:09:54,252 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627589394.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "409.00000000", "price": "0.00000410", "order_id": "x-XEKWYICX-BXMBC1627589393002099", "exchange_order_id": "168963736", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:10:53,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Cancelling the limit order x-XEKWYICX-BXMBC1627589393002000. [clock=2021-07-29 20:10:53+00:00]
+2021-07-29 20:10:53,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Cancelling the limit order x-XEKWYICX-BXMBC1627589393002099. [clock=2021-07-29 20:10:53+00:00]
+2021-07-29 20:10:53,243 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627589393002000.
+2021-07-29 20:10:53,251 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627589453.0, "order_id": "x-XEKWYICX-BXMBC1627589393002000", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:10:53,744 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627589393002099.
+2021-07-29 20:10:53,752 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627589453.0, "order_id": "x-XEKWYICX-BXMBC1627589393002099", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:10:54,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 2 bid orders at (Size, Price): ['579 XEM, 0.00000411 BTC', '407 XEM, 0.00000411 BTC']
+2021-07-29 20:10:54,246 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627589454002079 for 579.00000000 XEM-BTC.
+2021-07-29 20:10:54,253 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627589454.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000411", "order_id": "x-XEKWYICX-BXMBC1627589454002079", "exchange_order_id": "168963797", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:10:54,746 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 407.00000000 XEM-BTC 0.00000411.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 20:10:54,747 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 20:46:41,543 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": NaN, "order_id": "x-XEKWYICX-BXMBC1627589454002079", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:46:42,029 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": NaN, "order_id": "x-XEKWYICX-BXMBC1627589454002148", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:46:42,032 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 20:46:42,529 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 20:46:42,814 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 20:46:43,280 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 20:47:24,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['579 XEM, 0.00000411 BTC', '579 XEM, 0.0000041 BTC', '579 XEM, 0.0000041 BTC']
+2021-07-29 20:47:24,249 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627591644003608 for 579.00000000 XEM-BTC.
+2021-07-29 20:47:24,265 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591644.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000411", "order_id": "x-XEKWYICX-BXMBC1627591644003608", "exchange_order_id": "168966093", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:47:24,750 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627591644003691 for 579.00000000 XEM-BTC.
+2021-07-29 20:47:24,762 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591644.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000410", "order_id": "x-XEKWYICX-BXMBC1627591644003691", "exchange_order_id": "168966091", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:47:25,251 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 579.00000000 XEM-BTC 0.00000410.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 20:47:25,258 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 20:49:49,187 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 20:49:49,433 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627591644003608.
+2021-07-29 20:49:49,451 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591789.0, "order_id": "x-XEKWYICX-BXMBC1627591644003608", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:49:49,934 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627591644003691.
+2021-07-29 20:49:49,945 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591789.0, "order_id": "x-XEKWYICX-BXMBC1627591644003691", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:49:53,105 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 20:49:53,498 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 20:49:53,781 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 20:49:54,244 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 20:50:09,899 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 20:50:10,079 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 20:50:10,168 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 20:50:20,002 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['559 XEM, 0.0000041 BTC', '559 XEM, 0.0000041 BTC', '559 XEM, 0.0000041 BTC']
+2021-07-29 20:50:20,718 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627591820004441 for 559.00000000 XEM-BTC.
+2021-07-29 20:50:20,731 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591820.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "559.00000000", "price": "0.00000410", "order_id": "x-XEKWYICX-BXMBC1627591820004441", "exchange_order_id": "168966290", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:50:21,218 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627591820004533 for 559.00000000 XEM-BTC.
+2021-07-29 20:50:21,232 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591821.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "559.00000000", "price": "0.00000410", "order_id": "x-XEKWYICX-BXMBC1627591820004533", "exchange_order_id": "168966287", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:50:21,720 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627591820004561 for 559.00000000 XEM-BTC.
+2021-07-29 20:50:21,734 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591821.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "559.00000000", "price": "0.00000410", "order_id": "x-XEKWYICX-BXMBC1627591820004561", "exchange_order_id": "168966291", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:50:36,337 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 20:50:36,589 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627591820004441.
+2021-07-29 20:50:36,607 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591836.0, "order_id": "x-XEKWYICX-BXMBC1627591820004441", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:50:36,608 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 20:50:37,090 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627591820004533.
+2021-07-29 20:50:37,104 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591837.0, "order_id": "x-XEKWYICX-BXMBC1627591820004533", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:50:37,590 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627591820004561.
+2021-07-29 20:50:37,604 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591837.0, "order_id": "x-XEKWYICX-BXMBC1627591820004561", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:50:39,363 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 20:50:39,635 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 20:50:39,913 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 20:50:40,110 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 20:50:42,003 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['559 XEM, 0.0000041 BTC', '559 XEM, 0.00000409 BTC', '559 XEM, 0.00000409 BTC']
+2021-07-29 20:50:42,246 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627591842005043 for 559.00000000 XEM-BTC.
+2021-07-29 20:50:42,258 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591842.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "559.00000000", "price": "0.00000410", "order_id": "x-XEKWYICX-BXMBC1627591842005043", "exchange_order_id": "168966313", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:50:42,747 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627591842005123 for 559.00000000 XEM-BTC.
+2021-07-29 20:50:42,762 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591842.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "559.00000000", "price": "0.00000409", "order_id": "x-XEKWYICX-BXMBC1627591842005123", "exchange_order_id": "168966315", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:50:43,248 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627591842005152 for 559.00000000 XEM-BTC.
+2021-07-29 20:50:43,258 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591843.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "559.00000000", "price": "0.00000409", "order_id": "x-XEKWYICX-BXMBC1627591842005152", "exchange_order_id": "168966314", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:50:50,911 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 20:50:51,170 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627591842005043.
+2021-07-29 20:50:51,185 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591851.0, "order_id": "x-XEKWYICX-BXMBC1627591842005043", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:50:51,672 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627591842005123.
+2021-07-29 20:50:51,685 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591851.0, "order_id": "x-XEKWYICX-BXMBC1627591842005123", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:50:52,172 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627591842005152.
+2021-07-29 20:50:52,184 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627591852.0, "order_id": "x-XEKWYICX-BXMBC1627591842005152", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:55:51,286 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 20:55:51,549 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 20:55:51,831 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 20:55:51,836 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 20:56:46,613 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 20:56:49,738 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 20:56:50,017 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 20:56:50,310 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 20:56:50,313 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 20:56:53,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 1 bid orders at (Size, Price): ['61 XEM, 0.00000412 BTC']
+2021-07-29 20:56:53,253 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 61.00000000 XEM-BTC 0.00000412.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 20:56:53,261 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 20:57:16,671 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 20:57:19,679 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 20:57:19,952 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 20:57:20,246 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 20:57:20,249 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 20:57:24,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 1 bid orders at (Size, Price): ['61 XEM, 0.00000413 BTC']
+2021-07-29 20:57:24,251 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627592244005245 for 61.00000000 XEM-BTC.
+2021-07-29 20:57:24,269 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627592244.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "61.00000000", "price": "0.00000413", "order_id": "x-XEKWYICX-BXMBC1627592244005245", "exchange_order_id": "168966730", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 20:57:46,093 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 20:57:46,350 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627592244005245.
+2021-07-29 20:57:46,365 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627592266.0, "order_id": "x-XEKWYICX-BXMBC1627592244005245", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 20:58:41,030 - 1 - root - ERROR - "exit" is not valid decimal.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/config/config_helpers.py", line 79, in parse_cvar_value
+    return Decimal(str(value))
+decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+2021-07-29 20:58:48,805 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 20:59:45,880 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 23:15:42,396 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 23:15:42,788 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 23:15:43,079 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 23:15:43,080 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 23:16:17,786 - 1 - root - ERROR - "" is not valid decimal.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/config/config_helpers.py", line 79, in parse_cvar_value
+    return Decimal(str(value))
+decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+2021-07-29 23:16:18,967 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 23:18:31,002 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 1 bid orders at (Size, Price): ['82 XEM, 0.00000415 BTC']
+2021-07-29 23:18:31,492 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 82.00000000 XEM-BTC 0.00000415.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 23:18:31,497 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 23:18:40,388 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 23:18:48,465 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 23:19:29,674 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 23:19:29,950 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 23:19:30,237 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 23:19:30,238 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 23:20:11,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 2 bid orders at (Size, Price): ['539 XEM, 0.00000416 BTC', '37 XEM, 0.00000415 BTC']
+2021-07-29 23:20:11,248 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627600811001414 for 539.00000000 XEM-BTC.
+2021-07-29 23:20:11,248 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627600811.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "539.00000000", "price": "0.00000416", "order_id": "x-XEKWYICX-BXMBC1627600811001414", "exchange_order_id": "168977411", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 23:20:11,749 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627600811001489 for 37.00000000 XEM-BTC.
+2021-07-29 23:20:11,749 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627600811.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "37.00000000", "price": "0.00000415", "order_id": "x-XEKWYICX-BXMBC1627600811001489", "exchange_order_id": "168977412", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 23:20:33,997 - 1 - root - ERROR - "exit" is not valid decimal.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/config/config_helpers.py", line 79, in parse_cvar_value
+    return Decimal(str(value))
+decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+2021-07-29 23:20:41,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Cancelling the limit order x-XEKWYICX-BXMBC1627600811001414. [clock=2021-07-29 23:20:41+00:00]
+2021-07-29 23:20:41,002 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Cancelling the limit order x-XEKWYICX-BXMBC1627600811001489. [clock=2021-07-29 23:20:41+00:00]
+2021-07-29 23:20:41,760 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": NaN, "order_id": "x-XEKWYICX-BXMBC1627600811001489", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 23:20:42,262 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": NaN, "order_id": "x-XEKWYICX-BXMBC1627600811001414", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 23:20:42,755 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627600811001489.
+2021-07-29 23:20:42,763 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": NaN, "order_id": "x-XEKWYICX-BXMBC1627600811001489", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 23:21:16,326 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 23:21:16,598 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 23:21:16,886 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 23:21:16,887 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 23:22:15,710 - 1 - root - ERROR - "exit" is not valid decimal.
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/config/config_helpers.py", line 79, in parse_cvar_value
+    return Decimal(str(value))
+decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+2021-07-29 23:23:00,518 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 23:23:00,786 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 23:23:01,059 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 23:23:01,085 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 23:23:59,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['129 XEM, 0.00000414 BTC', '129 XEM, 0.00000413 BTC', '129 XEM, 0.00000413 BTC']
+2021-07-29 23:23:59,255 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627601039002090 for 129.00000000 XEM-BTC.
+2021-07-29 23:23:59,266 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627601039.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "129.00000000", "price": "0.00000414", "order_id": "x-XEKWYICX-BXMBC1627601039002090", "exchange_order_id": "168977891", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 23:23:59,756 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627601039002160 for 129.00000000 XEM-BTC.
+2021-07-29 23:23:59,765 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627601039.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "129.00000000", "price": "0.00000413", "order_id": "x-XEKWYICX-BXMBC1627601039002160", "exchange_order_id": "168977892", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 23:24:00,256 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627601039002186 for 129.00000000 XEM-BTC.
+2021-07-29 23:24:00,263 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627601040.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "129.00000000", "price": "0.00000413", "order_id": "x-XEKWYICX-BXMBC1627601039002186", "exchange_order_id": "168977893", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 23:24:31,002 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 23:24:40,120 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 23:24:40,381 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627601039002090.
+2021-07-29 23:24:40,381 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627601080.0, "order_id": "x-XEKWYICX-BXMBC1627601039002090", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 23:24:40,882 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627601039002160.
+2021-07-29 23:24:40,882 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627601080.0, "order_id": "x-XEKWYICX-BXMBC1627601039002160", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 23:24:41,383 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627601039002186.
+2021-07-29 23:24:41,383 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627601081.0, "order_id": "x-XEKWYICX-BXMBC1627601039002186", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 23:24:48,583 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 23:24:49,337 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 23:24:49,742 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 23:24:50,237 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 23:25:37,426 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 23:25:37,910 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 23:25:38,122 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 23:25:38,376 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 23:26:03,002 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 1 bid orders at (Size, Price): ['1.3E+2 XEM, 0.00000413 BTC']
+2021-07-29 23:26:03,744 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 130.00000000 XEM-BTC 0.00000413.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2010): Account has insufficient balance for requested action.
+2021-07-29 23:26:03,750 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2010): Account has insufficient balance for requested action.

@@ -1,0 +1,10 @@
+2021-07-29 20:46:40,717 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 20:55:50,756 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
