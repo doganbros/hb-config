@@ -988,3 +988,207 @@ binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, I
 2021-07-29 15:41:36,369 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627573296.0, "order_id": "x-XEKWYICX-BXMBC1627573276002292", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
 2021-07-29 15:41:36,863 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627573276002317.
 2021-07-29 15:41:36,871 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627573296.0, "order_id": "x-XEKWYICX-BXMBC1627573276002317", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:06:14,623 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 16:06:14,995 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 16:06:15,295 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 16:06:15,295 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 16:06:17,015 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['579 XEM, 0.00000404 BTC', '579 XEM, 0.00000403 BTC', '579 XEM, 0.00000403 BTC']
+2021-07-29 16:06:17,454 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574777015970 for 579.00000000 XEM-BTC.
+2021-07-29 16:06:17,465 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574777.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000404", "order_id": "x-XEKWYICX-BXMBC1627574777015970", "exchange_order_id": "168941722", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:06:17,956 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574777016035 for 579.00000000 XEM-BTC.
+2021-07-29 16:06:17,963 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574777.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000403", "order_id": "x-XEKWYICX-BXMBC1627574777016035", "exchange_order_id": "168941721", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:06:18,457 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574777016061 for 579.00000000 XEM-BTC.
+2021-07-29 16:06:18,464 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574778.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000403", "order_id": "x-XEKWYICX-BXMBC1627574777016061", "exchange_order_id": "168941723", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:06:47,002 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Cancelling the limit order x-XEKWYICX-BXMBC1627574777015970. [clock=2021-07-29 16:06:47+00:00]
+2021-07-29 16:06:47,002 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Cancelling the limit order x-XEKWYICX-BXMBC1627574777016035. [clock=2021-07-29 16:06:47+00:00]
+2021-07-29 16:06:47,002 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Cancelling the limit order x-XEKWYICX-BXMBC1627574777016061. [clock=2021-07-29 16:06:47+00:00]
+2021-07-29 16:06:47,248 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574777015970.
+2021-07-29 16:06:47,256 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574807.0, "order_id": "x-XEKWYICX-BXMBC1627574777015970", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:06:47,750 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574777016035.
+2021-07-29 16:06:47,758 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574807.0, "order_id": "x-XEKWYICX-BXMBC1627574777016035", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:06:48,251 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574777016061.
+2021-07-29 16:06:48,259 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574808.0, "order_id": "x-XEKWYICX-BXMBC1627574777016061", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:06:49,002 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['579 XEM, 0.00000404 BTC', '579 XEM, 0.00000404 BTC', '579 XEM, 0.00000404 BTC']
+2021-07-29 16:06:49,244 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574809002889 for 579.00000000 XEM-BTC.
+2021-07-29 16:06:49,253 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574809.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000404", "order_id": "x-XEKWYICX-BXMBC1627574809002889", "exchange_order_id": "168941763", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:06:49,746 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574809002957 for 579.00000000 XEM-BTC.
+2021-07-29 16:06:49,753 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574809.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000404", "order_id": "x-XEKWYICX-BXMBC1627574809002957", "exchange_order_id": "168941765", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:06:50,246 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574809002982 for 579.00000000 XEM-BTC.
+2021-07-29 16:06:50,254 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574810.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000404", "order_id": "x-XEKWYICX-BXMBC1627574809002982", "exchange_order_id": "168941764", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:06:59,360 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:06:59,512 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:06:59,840 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:06:59,979 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:07:00,164 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:07:05,229 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 16:07:05,474 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574809002889.
+2021-07-29 16:07:05,483 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574825.0, "order_id": "x-XEKWYICX-BXMBC1627574809002889", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:07:05,975 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574809002957.
+2021-07-29 16:07:05,982 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574825.0, "order_id": "x-XEKWYICX-BXMBC1627574809002957", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:07:06,477 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574809002982.
+2021-07-29 16:07:06,485 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574826.0, "order_id": "x-XEKWYICX-BXMBC1627574809002982", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:07:10,763 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 16:07:11,024 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 16:07:11,321 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 16:07:11,775 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 16:07:16,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['579 XEM, 0.00000405 BTC', '579 XEM, 0.00000404 BTC', '579 XEM, 0.00000404 BTC']
+2021-07-29 16:07:16,907 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574836001757 for 579.00000000 XEM-BTC.
+2021-07-29 16:07:16,913 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574836.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000405", "order_id": "x-XEKWYICX-BXMBC1627574836001757", "exchange_order_id": "168941828", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:07:17,407 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574836001835 for 579.00000000 XEM-BTC.
+2021-07-29 16:07:17,415 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574837.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000404", "order_id": "x-XEKWYICX-BXMBC1627574836001835", "exchange_order_id": "168941829", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:07:17,908 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574836001864 for 579.00000000 XEM-BTC.
+2021-07-29 16:07:17,915 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574837.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000404", "order_id": "x-XEKWYICX-BXMBC1627574836001864", "exchange_order_id": "168941827", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:07:23,778 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 16:07:24,032 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574836001757.
+2021-07-29 16:07:24,039 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574844.0, "order_id": "x-XEKWYICX-BXMBC1627574836001757", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:07:24,534 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574836001835.
+2021-07-29 16:07:24,542 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574844.0, "order_id": "x-XEKWYICX-BXMBC1627574836001835", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:07:25,036 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574836001864.
+2021-07-29 16:07:25,044 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574845.0, "order_id": "x-XEKWYICX-BXMBC1627574836001864", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:08:00,440 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:00,569 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:15,102 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:15,259 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:15,409 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:15,600 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:16,169 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:16,317 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:18,688 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 16:08:20,800 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:21,034 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:21,523 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:21,707 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:21,885 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:24,473 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 16:08:25,205 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 16:08:25,618 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 16:08:25,619 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 16:08:31,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['579 XEM, 0.00000405 BTC', '579 XEM, 0.00000404 BTC', '579 XEM, 0.00000404 BTC']
+2021-07-29 16:08:31,243 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574911001796 for 579.00000000 XEM-BTC.
+2021-07-29 16:08:31,253 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574911.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000405", "order_id": "x-XEKWYICX-BXMBC1627574911001796", "exchange_order_id": "168941887", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:08:31,743 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574911001864 for 579.00000000 XEM-BTC.
+2021-07-29 16:08:31,750 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574911.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000404", "order_id": "x-XEKWYICX-BXMBC1627574911001864", "exchange_order_id": "168941888", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:08:32,244 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574911001889 for 579.00000000 XEM-BTC.
+2021-07-29 16:08:32,255 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574912.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000404", "order_id": "x-XEKWYICX-BXMBC1627574911001889", "exchange_order_id": "168941889", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:08:35,222 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 16:08:36,400 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574911001796.
+2021-07-29 16:08:36,408 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574916.0, "order_id": "x-XEKWYICX-BXMBC1627574911001796", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:08:36,902 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574911001864.
+2021-07-29 16:08:36,909 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574916.0, "order_id": "x-XEKWYICX-BXMBC1627574911001864", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:08:37,402 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574911001889.
+2021-07-29 16:08:37,410 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574917.0, "order_id": "x-XEKWYICX-BXMBC1627574911001889", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:08:38,711 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:39,823 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:39,950 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:40,335 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:08:40,598 - 1 - hummingbot.client.hummingbot_application - ERROR - list index out of range
+Traceback (most recent call last):
+  File "/home/hummingbot/hummingbot/client/hummingbot_application.py", line 142, in _handle_command
+    if command_split[0] == s['command']:
+IndexError: list index out of range
+2021-07-29 16:09:02,978 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 16:09:03,236 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 16:09:03,509 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 16:09:03,960 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 16:09:06,001 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['579 XEM, 0.00000405 BTC', '579 XEM, 0.00000404 BTC', '579 XEM, 0.00000404 BTC']
+2021-07-29 16:09:06,244 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574946002159 for 579.00000000 XEM-BTC.
+2021-07-29 16:09:06,244 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574946.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000405", "order_id": "x-XEKWYICX-BXMBC1627574946002159", "exchange_order_id": "168941923", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:09:06,749 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574946002229 for 579.00000000 XEM-BTC.
+2021-07-29 16:09:06,749 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574946.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000404", "order_id": "x-XEKWYICX-BXMBC1627574946002229", "exchange_order_id": "168941925", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:09:07,250 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Created LIMIT_MAKER BUY order x-XEKWYICX-BXMBC1627574946002254 for 579.00000000 XEM-BTC.
+2021-07-29 16:09:07,251 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574947.0, "type": "OrderType.LIMIT_MAKER", "trading_pair": "XEM-BTC", "amount": "579.00000000", "price": "0.00000404", "order_id": "x-XEKWYICX-BXMBC1627574946002254", "exchange_order_id": "168941924", "leverage": 1, "position": "NILL", "event_name": "BuyOrderCreatedEvent", "event_source": "binance"}
+2021-07-29 16:09:14,707 - 1 - hummingbot.client.hummingbot_application - INFO - stop command initiated.
+2021-07-29 16:09:14,954 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574946002159.
+2021-07-29 16:09:14,954 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574954.0, "order_id": "x-XEKWYICX-BXMBC1627574946002159", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:09:15,455 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574946002229.
+2021-07-29 16:09:15,455 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574955.0, "order_id": "x-XEKWYICX-BXMBC1627574946002229", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 16:09:15,957 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627574946002254.
+2021-07-29 16:09:15,957 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627574955.0, "order_id": "x-XEKWYICX-BXMBC1627574946002254", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
