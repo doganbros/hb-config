@@ -26,3 +26,98 @@ IndexError: list index out of range
 2021-07-29 14:52:56,014 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627570376.0, "order_id": "x-XEKWYICX-BXMBC1627570300425074", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
 2021-07-29 14:52:56,502 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Successfully cancelled order x-XEKWYICX-BXMBC1627570300425200.
 2021-07-29 14:52:56,515 - 1 - hummingbot.core.event.event_reporter - EVENT_LOG - {"timestamp": 1627570376.0, "order_id": "x-XEKWYICX-BXMBC1627570300425200", "exchange_order_id": null, "event_name": "OrderCancelledEvent", "event_source": "binance"}
+2021-07-29 14:58:13,948 - 1 - hummingbot.client.hummingbot_application - INFO - start command initiated.
+2021-07-29 14:58:14,687 - 1 - hummingbot.connector.exchange.binance.binance_exchange - INFO - Network status has changed to NetworkStatus.CONNECTED. Starting networking...
+2021-07-29 14:58:14,963 - 1 - hummingbot.connector.exchange.binance.binance_api_user_stream_data_source - INFO - Reconnecting to wss://stream.binance.com:9443/ws/vclI9YDcmvotxiGuU8VvjMYlGSZnEokPqF4fDkxz9Doo7QSXMGIthvR5hxBb.
+2021-07-29 14:58:14,971 - 1 - hummingbot.connector.exchange.binance.binance_order_book_tracker - INFO - Initialized order book for XEM-BTC. 1/1 completed.
+2021-07-29 14:58:16,012 - 1 - hummingbot.strategy.pure_market_making.pure_market_making - INFO - (XEM-BTC) Creating 3 bid orders at (Size, Price): ['579 XEM, 0.00000404 BTC', '579 XEM, 0.00000403 BTC', '579 XEM, 0.00000403 BTC']
+2021-07-29 14:58:16,954 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 579.00000000 XEM-BTC 0.00000404.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-29 14:58:16,962 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-29 14:58:17,454 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 579.00000000 XEM-BTC 0.00000403.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-29 14:58:17,454 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-29 14:58:17,956 - 1 - hummingbot.connector.exchange.binance.binance_exchange - NETWORK - Error submitting BUY LIMIT_MAKER order to Binance for 579.00000000 XEM-BTC 0.00000403.
+Traceback (most recent call last):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 887, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.create_order
+    order_result = await self.query_api(self._binance_client.create_order, **api_params)
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 229, in query_api
+    async with self._throttler.weighted_task(request_weight=request_weight):
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 241, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    raise ex
+  File "hummingbot/connector/exchange/binance/binance_exchange.pyx", line 231, in hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange.query_api
+    return await self._async_scheduler.call_async(partial(func, *args, **kwargs),
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 128, in call_async
+    return await self.schedule_async_call(coro, timeout_seconds, app_warning_msg=app_warning_msg)
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 117, in schedule_async_call
+    return await fut
+  File "/home/hummingbot/hummingbot/core/utils/async_call_scheduler.py", line 80, in _coro_scheduler
+    fut.set_result(await coro)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 1201, in create_order
+    return self._post('order', True, data=params)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 240, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 202, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 197, in _request
+    return self._handle_response()
+  File "/home/hummingbot/miniconda3/envs/hummingbot/lib/python3.8/site-packages/binance/client.py", line 230, in _handle_response
+    raise BinanceAPIException(self.response)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2021-07-29 14:58:17,958 - 1 - hummingbot.connector.exchange.binance.binance_exchange - WARNING - APIError(code=-2015): Invalid API-key, IP, or permissions for action.
